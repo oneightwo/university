@@ -62,7 +62,7 @@
             <td><#if (!student.group??)>-<#else> ${student.group.faculty}</#if></td>
             <td>${student.typeScholarship}</td>
             <td>${student.dateReceipt}</td>
-            <td><a href="/delete/${student.id}">X</a></td>
+            <td><a href="/delete/${student.id}">Delete</a></td>
             <td><a href="/update/${student.id}">Update</a></td>
         </tr>
     </#list>

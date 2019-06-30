@@ -36,14 +36,6 @@ public class Student {
         this.dateReceipt = dateReceipt;
     }
 
-    public String groupInfo() {
-        if (group == null) {
-            return "null";
-        } else {
-            return "id: " + group.getId() + " Number: " + group.getNumber() + " faculty: " + group.getFaculty();
-        }
-    }
-
     public Long getIdGroup() {
         return idGroup;
     }

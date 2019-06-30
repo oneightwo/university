@@ -4,7 +4,6 @@ import com.university.model.Student;
 import com.university.service.GroupService;
 import com.university.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -15,7 +14,6 @@ public class MainController {
     @Autowired
     private StudentService studentService;
 
-    @Qualifier("dataGroupService")
     @Autowired
     private GroupService groupService;
 
@@ -37,7 +35,7 @@ public class MainController {
     }
 
     @PostMapping("/add")
-    public String add(@ModelAttribute("student") Student student) {
+    public String addStudent(@ModelAttribute("student") Student student) {
         studentService.add(student);
         return "redirect:/list";
     }
@@ -56,7 +54,7 @@ public class MainController {
     }
 
     @GetMapping("/delete/{id}")
-    public String delete(@PathVariable("id") Long id) {
+    public String deleteStudent(@PathVariable("id") Long id) {
         studentService.delete(id);
         return "redirect:/list";
     }
